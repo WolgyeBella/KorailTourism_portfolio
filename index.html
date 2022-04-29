@@ -24,8 +24,8 @@
     <header>
         <div class="wrap">
             <div class="logo">
-                <a href="#"><img src="img/logo01.png" alt="logo01"></a>
-                <a href="#"><img src="img/logo02.png" alt="logo02"></a>
+                <a href="#"></a>
+                <a href="#"></a>
             </div>
             <nav class="gnb">
                 <ul class="menu">
@@ -84,7 +84,7 @@
                 </ul>
             </nav>
             <div class="iconBox">
-                <a href="#" class="dday"><img src="img/d_dayIcon.png" alt=""></a>
+                <a href="#" class="dday"></a>
                 <a href="#" class="search"><i class="fa-solid fa-magnifying-glass"></i></a>
                 <a href="#" class="side"><i class="fa-solid fa-bars"></i></a>
             </div>
@@ -92,7 +92,7 @@
     </header>
     <div class="slide">
         <div class="mainslide">
-            <div style="background-image: url(img/main01.png);"></div>
+            <div class="active" style="background-image: url(img/main01.png);"></div>
             <div style="background-image: url(img/main02.png);"></div>
             <div style="background-image: url(img/main03.png);"></div>
             <div style="background-image: url(img/main04.png);"></div>
@@ -100,12 +100,20 @@
         </div>
         <div class="btn">
             <ul>
-                <li><a href="#">전라북도</a></li>
+                <li class="active"><a href="#">전라북도</a></li>
                 <li><a href="#">가정의 달</a></li>
                 <li><a href="#">요즘대세 친환경여행</a></li>
                 <li><a href="#">봄 이야기</a></li>
                 <li><a href="#">섬 여행</a></li>
             </ul>
+        </div>
+        <div class="side-btns">
+            <div>
+                <span><i class="fas fa-angle-left"></i></span>
+            </div>
+            <div>
+                <span><i class="fas fa-angle-right"></i></span>
+            </div>
         </div>
     </div>
     
@@ -113,84 +121,87 @@
         <!-- 베스트여행 -->
         <div class="best" style="background-image: url(img/backgorundImg02.png);">
             <h2>베스트 여행</h2>
-            <div class="bestBox">
-                <div class="itemBox" style="background-image: url(img/best01.jpg);">
-                    <div class="top">
-                        <img src="img/nameIcon1.png" alt="nameIcon1">
-                        <p>세계 5대 튤립축제&안면도 당일</p>
+            <div class="bestBox__container">
+                <div class="bestBox">
+                    <div class="itemBox" style="background-image: url(img/best01.jpg);">
+                        <div class="top">
+                            <img src="img/nameIcon1.png" alt="nameIcon1">
+                            <p>세계 5대 튤립축제&안면도 당일</p>
+                        </div>
+                        <div class="bottom">
+                            <p>₩84,000원~</p>
+                        </div>
                     </div>
-                    <div class="bottom">
-                        <p>₩84,000원~</p>
+                    <div class="itemBox" style="background-image: url(img/best02.jpg);">
+                        <div class="top">
+                            <img src="img/nameIcon6.png" alt="nameIcon6">
+                            <p>태종대 · 흰여울문화마을 · 송도해수욕장 당일</p>
+                        </div>
+                        <div class="bottom">
+                            <p>₩104,000원~</p>
+                        </div>
                     </div>
-                </div>
-                <div class="itemBox" style="background-image: url(img/best02.jpg);">
-                    <div class="top">
-                        <img src="img/nameIcon6.png" alt="nameIcon6">
-                        <p>태종대 · 흰여울문화마을 · 송도해수욕장 당일</p>
+                    <div class="itemBox" style="background-image: url(img/best03.jpg);">
+                        <div class="top">
+                            <img src="img/nameIcon3.png" alt="nameIcon3">
+                            <p>천년의 신비를 간직한 홍도 · 흑산도 1박2일</p>
+                        </div>
+                        <div class="bottom">
+                            <p>₩292,000원~</p>
+                        </div>
                     </div>
-                    <div class="bottom">
-                        <p>₩104,000원~</p>
+                    <div class="itemBox" style="background-image: url(img/best04.jpg);">
+                        <div class="top">
+                            <img src="img/nameIcon7.png" alt="nameIcon7">
+                            <p>호반도시 매력을 제대로 느낄 수 있는 춘천 여행 당일</p>
+                        </div>
+                        <div class="bottom">
+                            <p>₩59,000원~</p>
+                        </div>
                     </div>
-                </div>
-                <div class="itemBox" style="background-image: url(img/best03.jpg);">
-                    <div class="top">
-                        <img src="img/nameIcon3.png" alt="nameIcon3">
-                        <p>천년의 신비를 간직한 홍도 · 흑산도 1박2일</p>
+                    <div class="itemBox" style="background-image: url(img/best05.jpg);">
+                        <div class="top">
+                            <img src="img/nameIcon1.png" alt="nameIcon1">
+                            <p>옥화구곡 관광길 & 상당산성 & 신선주 만들기 체험</p>
+                        </div>
+                        <div class="bottom">
+                            <p>₩79,000원~</p>
+                        </div>
                     </div>
-                    <div class="bottom">
-                        <p>₩292,000원~</p>
+                    <div class="itemBox" style="background-image: url(img/best06.jpg);">
+                        <div class="top">
+                            <img src="img/nameIcon3.png" alt="nameIcon3">
+                            <p>봄향기 가득한 남도 답사 1번지 1박2일</p>
+                        </div>
+                        <div class="bottom">
+                            <p>₩233,000원~</p>
+                        </div>
                     </div>
-                </div>
-                <div class="itemBox" style="background-image: url(img/best04.jpg);">
-                    <div class="top">
-                        <img src="img/nameIcon7.png" alt="nameIcon7">
-                        <p>호반도시 매력을 제대로 느낄 수 있는 춘천 여행 당일</p>
+                    <div class="itemBox" style="background-image: url(img/best07.jpg);">
+                        <div class="top">
+                            <img src="img/nameIcon3.png" alt="nameIcon3">
+                            <p>보라빛 향연 신안 퍼플섬  1박2일</p>
+                        </div>
+                        <div class="bottom">
+                            <p>₩266,000원~</p>
+                        </div>
                     </div>
-                    <div class="bottom">
-                        <p>₩59,000원~</p>
+                    <div class="itemBox" style="background-image: url(img/best08.jpg);">
+                        <div class="top">
+                            <img src="img/nameIcon5.png" alt="nameIcon5">
+                            <p>아름다운 신비의 섬~ 울릉도 2박3일</p>
+                        </div>
+                        <div class="bottom">
+                            <p>₩342,000원~</p>
+                        </div>
                     </div>
-                </div>
-                <div class="itemBox" style="background-image: url(img/best05.jpg);">
-                    <div class="top">
-                        <img src="img/nameIcon1.png" alt="nameIcon1">
-                        <p>옥화구곡 관광길 & 상당산성 & 신선주 만들기 체험</p>
+                    <div class="btns">
+                        <a class="prev" href="#"><i class="fa-solid fa-circle-chevron-left"></i></a>
+                        <a class="next" href="#"><i class="fa-solid fa-circle-chevron-right"></i></a>
                     </div>
-                    <div class="bottom">
-                        <p>₩79,000원~</p>
-                    </div>
-                </div>
-                <div class="itemBox" style="background-image: url(img/best06.jpg);">
-                    <div class="top">
-                        <img src="img/nameIcon3.png" alt="nameIcon3">
-                        <p>봄향기 가득한 남도 답사 1번지 1박2일</p>
-                    </div>
-                    <div class="bottom">
-                        <p>₩233,000원~</p>
-                    </div>
-                </div>
-                <div class="itemBox" style="background-image: url(img/best07.jpg);">
-                    <div class="top">
-                        <img src="img/nameIcon3.png" alt="nameIcon3">
-                        <p>보라빛 향연 신안 퍼플섬  1박2일</p>
-                    </div>
-                    <div class="bottom">
-                        <p>₩266,000원~</p>
-                    </div>
-                </div>
-                <div class="itemBox" style="background-image: url(img/best08.jpg);">
-                    <div class="top">
-                        <img src="img/nameIcon5.png" alt="nameIcon5">
-                        <p>아름다운 신비의 섬~ 울릉도 2박3일</p>
-                    </div>
-                    <div class="bottom">
-                        <p>₩342,000원~</p>
-                    </div>
-                </div>
-                <div class="btns">
-                    <a class="prev" href="#"><i class="fa-solid fa-circle-chevron-left"></i></a>
-                    <a class="next" href="#"><i class="fa-solid fa-circle-chevron-right"></i></a>
                 </div>
             </div>
+            
         </div>
         <!-- 추천여행 -->
         <div class="recommend" style="background-image: url(img/backgorundImg03.png);">
@@ -511,6 +522,6 @@
             </div>
         </section>
     </footer>
-    <!-- <script src="js/main.js"></script> -->
+    <script src="js/main.js"></script>
 </body>
 </html>
