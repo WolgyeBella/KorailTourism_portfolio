@@ -25,27 +25,15 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    cursor: default;
 }
 
 a{
     text-decoration: none;
     color: var(--font-color);
-    cursor: pointer;
-}
-
-i{
-    cursor: pointer;
 }
 
 ul{
     list-style: none;
-}
-
-button{
-    background: none;
-    border: none;
-    cursor: pointer;
 }
 
 .tnb{
@@ -359,7 +347,8 @@ main .best{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 70px 0;
+    position: relative;
+    padding: 50px 0;
     background-repeat: no-repeat;
 }
 
@@ -371,13 +360,12 @@ main .best h2{
 main .best .bestBox__container{
     max-width: 1200px;
     overflow: hidden;
-    margin: 50px auto;
-    position: relative;
+    margin: auto;
 }
 
 main .best .bestBox{
     width: 4000px;
-    margin: auto;
+    /* margin: 0 auto; */
     display: flex;
     margin: var(--padding-lg) 0;
 }
@@ -390,7 +378,6 @@ main .best .btns a{
     color: var(--font-sub);
     opacity: 0.5;
     transition: all 0.4s;
-    cursor: pointer;
 }
 
 main .best .btns a:hover{
@@ -401,7 +388,6 @@ main .best .btns .prev{
     display: block;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
     left: 15px;
 }
 
@@ -409,81 +395,59 @@ main .best .btns .next{
     display: block;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
-    right: 35px;
+    right: var(--padding);
 }
 
-.itemBox{
-    width: 280px;
-    height: 280px;
-    margin-right: 20px;
+main .best .bestBox .itemBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: var(--padding);
+    color: var(--font-sub);
+    cursor: pointer;
     position: relative;
     transition: all 300ms;
 }
 
-.itemBox img{
-    width: 100%;
-    height: 100%;
-}
-
-.itemUp{
+main .best .bestBox .itemBox::before{
+    content: "";
+    opacity: 0.5;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.4);
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: #000;
+}
+
+main .best .bestBox .itemBox .top{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    opacity: 0;
-    transform: translateY(10px);
-    transition: all 300ms ease-in;
+    position: relative;
 }
 
-.itemUp:hover{
-    opacity: 1;
-    transform: translateY(0);
+main .best .bestBox .itemBox .bottom{
+    position: relative;
 }
 
-.itemUp p{
-    color: var(--font-sub);
-    font-size: var(--font-sm);
-    margin-bottom: 5px;
+main .itemBox .top img{
+    width: 80px;
 }
 
-.itemUp p.itemUp__title{
-    border: 1px solid var(--font-sub);
-    border-radius: 50%;
-    width: 40px;
-    line-height: 40px;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.itemUp button{
-    color: var(--font-sub);
-    margin-top: 10px;
-    padding: 5px;
-    display: flex;
-    align-items: center;
-    transition: all 300ms;
-}
-
-.itemUp button:hover{
-    transform: scale(1.1);
-}
-
-.itemUp button i{
+main .itemBox p{
     font-size: var(--font-lg);
-    margin-right: 5px;
-    transition: all 300ms;
+    padding: var(--padding);
 }
 
-.itemUp button:hover i{
-    transform: scale(1.1);
+main .itemBox .bottom p{
+    float: right;
+    font-weight: bold;
 }
 
 /* 추천여행 */
@@ -493,16 +457,17 @@ main .recommend{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
-    /* padding: 50px 0; */
-    padding-bottom: 100px;
+    padding: 50px 0;
 }
 
 main .recommend__wrap{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    /* width: 1400px; */
     max-width: 1200px;
     margin: 0 auto;
+    /* height: 100vh; */
 }
 
 main .recommend h2{
@@ -515,7 +480,6 @@ main .recommend__btn{
     justify-content: center;
     align-items: center;
     margin: var(--padding-lg);
-    margin: 50px;
 }
 
 main .recommend__btn button{
@@ -549,12 +513,54 @@ main .recommend__items .recommend__item{
     display: none;
 }
 
+main .recommend__items .recommend__item .itemBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 280px;
+    height: 280px;
+    margin-right: var(--padding);
+    cursor: pointer;
+    position: relative;
+    color: var(--font-sub);
+    z-index: 1;
+}
+
+main .recommend__items .recommend__item .itemBox::before{
+    content: "";
+    opacity: 0.5;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: #000;
+}
+
+main .recommend__items .recommend__item .itemBox .top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+main .recommend__items .recommend__item .itemBox .bottom{
+    position: relative;
+}
+
+main .recommend__items .recommend__item .itemBox img{
+    width: 80px;
+}
+
 /* 테마여행 */
 
 main .theme{
     width: 100%;
     /* height: 100vh; */
-    padding: 80px 0;
+    padding: var(--padding-lg);
 
     background-size: cover;
     background-repeat: no-repeat;
@@ -572,24 +578,19 @@ main .theme h2{
 }
 
 main .theme .theme_items{
-    max-width: 1200px;
-    margin: auto;
+    width: 1400px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: var(--padding-lg) 0;
 }
 
 main .theme .theme_items .theme_item{
     display: flex;
     flex-direction: column;
-    margin-right: 30px;
     /* cursor: pointer; */
 }
-
-/* main .theme .theme_items .theme_item:nth-child(4) img{
-    width: 209px;
-    height: 215px;
-} */
 
 main .theme .theme_text{
     padding: var(--padding);
@@ -667,13 +668,8 @@ footer .snsSet{
 
 footer .snsSet a{
     display: inline-block;
-    margin: 0 var(--padding);
-    /* font-size: 2rem; */
-}
-
-footer .snsSet i{
+    padding: 0 var(--padding);
     font-size: 2rem;
-    cursor: pointer;
 }
 
 footer .footer__bottom{
