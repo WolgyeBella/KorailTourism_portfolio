@@ -61,4 +61,6 @@ $(document).ready(function(){
     setInterval(function(){
         $('.slide > .side-btns > div').eq(1).click();
     }, 3000);
+
+    const sideMenu = document.querySelector('.menu>li');
 });

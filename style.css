@@ -246,6 +246,134 @@ header .iconBox .dday{
     height: 55px;
 }
 
+header .iconBox a.side{
+    display: none;
+}
+
+#side{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+#side.on{
+    display: block;
+}
+
+.side__container{
+    position: absolute;
+    right: 0;
+    width: 300px;
+    height: 100%;
+    background-color: var(--font-sub);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.side__top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--main-color);
+    color: var(--font-sub);
+    height: 50px;
+    padding: 0 10px;
+}
+
+.side__top select{
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--font-sub);
+}
+
+button i{
+    font-size: var(--font-lg);
+    color: var(--font-sub);
+}
+
+.side__bottom{
+    margin-top: 20px;
+    width: 300px;
+    height: 100%;
+}
+
+.menu{
+    width: 100px;
+    height: 100%;
+}
+
+.menu > li > a{
+    display: block;
+    width: 100px;
+    line-height: 50px;
+    text-align: center;
+    font-size: var(--font-sm);
+}
+
+.menu > li.on > a{
+    width: 110px;
+    line-height: 50px;
+    background: var(--main-color);
+    color: var(--font-sub);
+}
+
+.sub__menu{
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 200px;
+    display: none;
+    margin-top: 20px;
+}
+
+.sub__menu.on{
+    display: block;
+}
+
+.sub__menu1 > li > a{
+    display: block;
+    margin: auto;
+    width: 160px;
+    line-height: 50px;
+    text-align: left;
+    font-size: var(--font-sm);
+    border-bottom: 1px solid var(--sub-light);
+}
+
+.sub__menu1 > li > a > i{
+    float: right;
+    line-height: 50px;
+    transition: all 300ms;
+}
+
+.sub__menu1 > li.on > a > i{
+    transform: rotate(90deg);
+}
+
+.sub__menu2{
+    padding: 10px 0;
+    display: none;
+}
+
+.sub__menu2.on{
+    display: block;
+}
+
+.sub__menu2 > li > a{
+    display: block;
+    margin: auto;
+    width: 160px;
+    line-height: 20px;
+    text-align: center;
+    font-size: var(--font-sm);
+}
+
 /* 메인슬라이드 */
 
 .slide {
@@ -784,22 +912,37 @@ footer .section__right .cs p{
 
 @media screen and (max-width: 1400px) {
     .tnb ul{
-        width: 1000px;
+        max-width: 1000px;
     }
 
     .wrap{
-        width: 1000px;
-    }
-
-    header .logo a:nth-child(2){
-        display: none;
-    }
-
-    header .iconBox a:first-child{
-        display: none;
+        max-width: 1000px;
     }
 
     header .gnb .menu li a{
         padding:  0 var(--padding);
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .tnb ul{
+        max-width: 800px;
+    }
+
+    .wrap{
+        max-width: 800px;
+    }
+
+    header .gnb .menu{
+        display: none;
+    }
+
+    header .iconBox a.side{
+        display: block;
+    }
+
+    /* main */
+    .slide .btn{
+        display: none;
     }
 }
