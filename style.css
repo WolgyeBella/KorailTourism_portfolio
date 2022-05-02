@@ -250,6 +250,8 @@ header .iconBox a.side{
     display: none;
 }
 
+/* side menu */
+
 #side{
     position: fixed;
     top: 0;
@@ -258,6 +260,7 @@ header .iconBox a.side{
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
     z-index: 1;
+    display: none;
 }
 
 #side.on{
@@ -303,27 +306,34 @@ button i{
     height: 100%;
 }
 
-.menu{
+.side__bottom .side__menu{
     width: 100px;
     height: 100%;
 }
 
-.menu > li > a{
+.side__bottom .side__menu > li{
+    width: 100px;
+    height: 50px;
+}
+
+.side__bottom .side__menu > li > a{
     display: block;
     width: 100px;
+    height: 50px;
     line-height: 50px;
     text-align: center;
     font-size: var(--font-sm);
 }
 
-.menu > li.on > a{
+.side__bottom .side__menu > li.on > a{
     width: 110px;
+    height: 50px;
     line-height: 50px;
     background: var(--main-color);
     color: var(--font-sub);
 }
 
-.sub__menu{
+.side__bottom .sub__menu{
     position: absolute;
     top: 50px;
     right: 0;
@@ -332,11 +342,11 @@ button i{
     margin-top: 20px;
 }
 
-.sub__menu.on{
+.side__bottom .side__menu > li.on > .sub__menu{
     display: block;
 }
 
-.sub__menu1 > li > a{
+.sub__menu .sub__menu1 > li > a{
     display: block;
     margin: auto;
     width: 160px;
@@ -346,31 +356,31 @@ button i{
     border-bottom: 1px solid var(--sub-light);
 }
 
-.sub__menu1 > li > a > i{
+.sub__menu .sub__menu1 > li > a > i{
     float: right;
     line-height: 50px;
     transition: all 300ms;
 }
 
-.sub__menu1 > li.on > a > i{
+.sub__menu .sub__menu1 > li.on > a > i{
     transform: rotate(90deg);
 }
 
-.sub__menu2{
+.sub__menu .sub__menu2{
     padding: 10px 0;
     display: none;
 }
 
-.sub__menu2.on{
+.sub__menu .sub__menu1 > li.on > .sub__menu2{
     display: block;
 }
 
-.sub__menu2 > li > a{
+.sub__menu .sub__menu2 > li > a{
     display: block;
     margin: auto;
     width: 160px;
-    line-height: 20px;
-    text-align: center;
+    line-height: 30px;
+    text-align: left;
     font-size: var(--font-sm);
 }
 
@@ -544,7 +554,8 @@ main .best .btns .next{
 .itemBox{
     width: 280px;
     height: 280px;
-    margin-right: 20px;
+    /* margin-right: 20px; */
+    margin: 0 20px 20px 0;
     position: relative;
     transition: all 300ms;
 }
@@ -644,6 +655,7 @@ main .recommend__btn{
     align-items: center;
     margin: var(--padding-lg);
     margin: 50px;
+    flex-wrap: wrap;
 }
 
 main .recommend__btn button{
@@ -670,7 +682,7 @@ main .recommend__items{
 main .recommend__items .recommend__item.on{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 main .recommend__items .recommend__item{
@@ -705,6 +717,8 @@ main .theme .theme_items{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    overflow: hidden;
 }
 
 main .theme .theme_items .theme_item{
@@ -735,6 +749,38 @@ main .theme .theme_text button{
     margin-top: var(--padding);
 }
 
+.theme .theme_items .btns{
+    font-size: 3rem;
+    display: none;
+}
+
+.theme .theme_items .btns a{
+    color: var(--font-sub);
+    opacity: 0.5;
+    transition: all 0.4s;
+    cursor: pointer;
+}
+
+.theme .theme_items .btns a:hover{
+    opacity: 1;
+}
+
+.theme .theme_items .btns .prev{
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15px;
+}
+
+.theme .theme_items .btns .next{
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 40px;
+}
+
 /* 푸터 */
 
 footer{
@@ -758,7 +804,7 @@ footer .footer__top{
 
 footer .footer__wrap{
     padding: var(--padding);
-    width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -777,6 +823,7 @@ footer .menuTab ul{
 }
 
 footer .menuTab ul li a{
+    font-size: var(--font-sm);
     display: inline-block;
     padding-right: var(--padding);
 }
@@ -876,6 +923,7 @@ footer .section__right .voc{
     justify-content: space-between;
     align-items: center;
     margin-right: var(--padding-lg);
+    margin: 20px 0;
 }
 
 footer .section__right .voc i{
@@ -898,6 +946,7 @@ footer .section__right .cs{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    margin: 20px 0;
 }
 
 footer .section__right .cs strong{
@@ -919,8 +968,36 @@ footer .section__right .cs p{
         max-width: 1000px;
     }
 
+    main .best .bestBox__container{
+        max-width: 1000px;
+    }
+
     header .gnb .menu li a{
         padding:  0 var(--padding);
+    }
+
+    .slide .btn{
+        display: none;
+    }
+
+    .theme .theme_items{
+        max-width: 900px;
+    }
+
+    .theme .theme_items .btns{
+        display: block;
+    }
+
+    .footer__wrap{
+        flex-direction: column;
+    }
+
+    .snsSet{
+        margin: 10px 0;
+    }
+
+    .infoTab{
+        margin: 20px 0;
     }
 }
 
@@ -933,6 +1010,32 @@ footer .section__right .cs p{
         max-width: 800px;
     }
 
+    main .best .bestBox__container{
+        max-width: 800px;
+    }
+
+    header .gnb .menu{
+        display: none;
+    }
+
+    header .iconBox a.side{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .tnb ul{
+        max-width: 600px;
+    }
+
+    .wrap{
+        max-width: 600px;
+    }
+
+    main .best .bestBox__container{
+        max-width: 600px;
+    }
+
     header .gnb .menu{
         display: none;
     }
@@ -941,8 +1044,8 @@ footer .section__right .cs p{
         display: block;
     }
 
-    /* main */
-    .slide .btn{
-        display: none;
+    .section__left{
+        flex-direction: column;
     }
+
 }

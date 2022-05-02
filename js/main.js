@@ -62,5 +62,40 @@ $(document).ready(function(){
         $('.slide > .side-btns > div').eq(1).click();
     }, 3000);
 
-    const sideMenu = document.querySelector('.menu>li');
+});
+
+// 사이드 탭 메뉴 클릭 이벤트
+const sideMenu = document.querySelectorAll('.side__bottom > .side__menu > li');
+for( var i = 0; i < sideMenu.length; i++){
+
+    sideMenu[i].querySelector('.sideBtn').addEventListener('click', function(e){
+        e.preventDefault();
+        for(var j = 0; j < sideMenu.length; j++){
+            sideMenu[j].classList.remove('on');
+        }
+        this.parentNode.classList.add('on');
+    });
+}
+
+// 사이드 서브메뉴 클릭 이벤트
+const sideSubMenu = document.querySelectorAll('.sub__menu .sub__menu1 > li');
+for( var i = 0; i < sideSubMenu.length; i++){
+    sideSubMenu[i].querySelector('.sideSubBtn').addEventListener('click', function(e){
+        e.preventDefault();
+        this.parentNode.classList.toggle('on');
+    });
+}
+
+// 사이드 창 닫기 버튼 클릭 이벤트
+const sideCloseButton = document.querySelector('.side__top > button');
+const side = document.querySelector('#side');
+sideCloseButton.addEventListener('click', () => {
+    side.classList.remove('on');
+});
+
+
+// 사이드 창 열기 버튼 클릭 이벤트
+const sideOpenButton = document.querySelector('.iconBox > .side');
+sideOpenButton.addEventListener('click', () => {
+    side.classList.add('on');
 });
