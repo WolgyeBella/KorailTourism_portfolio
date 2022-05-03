@@ -713,29 +713,34 @@ main .theme h2{
 
 main .theme .theme_items{
     max-width: 1200px;
-    margin: auto;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
+    position: relative;
+    margin: auto;
+}
+
+main .theme .theme_items .theme_item{
+    margin: 0 30px 30px 0;
+    cursor: pointer;
     position: relative;
     overflow: hidden;
 }
 
-main .theme .theme_items .theme_item{
-    display: flex;
-    flex-direction: column;
-    margin-right: 30px;
-    /* cursor: pointer; */
+main .theme .theme_items .theme_item:hover .theme_text{
+    transform: translateY(0);
 }
-
-/* main .theme .theme_items .theme_item:nth-child(4) img{
-    width: 209px;
-    height: 215px;
-} */
 
 main .theme .theme_text{
     padding: var(--padding);
     background: var(--font-sub);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    transition: all 300ms ease-in;
+    transform: translateY(110px);
 }
 
 main .theme .theme_text button{
@@ -747,38 +752,6 @@ main .theme .theme_text button{
     color: var(--font-sub);
     cursor: pointer;
     margin-top: var(--padding);
-}
-
-.theme .theme_items .btns{
-    font-size: 3rem;
-    display: none;
-}
-
-.theme .theme_items .btns a{
-    color: var(--font-sub);
-    opacity: 0.5;
-    transition: all 0.4s;
-    cursor: pointer;
-}
-
-.theme .theme_items .btns a:hover{
-    opacity: 1;
-}
-
-.theme .theme_items .btns .prev{
-    display: block;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 15px;
-}
-
-.theme .theme_items .btns .next{
-    display: block;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 40px;
 }
 
 /* 푸터 */
@@ -980,8 +953,8 @@ footer .section__right .cs p{
         display: none;
     }
 
-    .theme .theme_items{
-        max-width: 900px;
+    .theme .theme__items{
+        max-width: 1000px;
     }
 
     .theme .theme_items .btns{
@@ -1014,6 +987,10 @@ footer .section__right .cs p{
         max-width: 800px;
     }
 
+    .theme .theme__items{
+        max-width: 800px;
+    }
+
     header .gnb .menu{
         display: none;
     }
@@ -1033,6 +1010,10 @@ footer .section__right .cs p{
     }
 
     main .best .bestBox__container{
+        max-width: 600px;
+    }
+
+    .theme .theme__items{
         max-width: 600px;
     }
 
