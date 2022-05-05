@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>코레일관광개발</title>
+    <link rel="shortcut icon" href="img_korail/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style_korail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/b521825f68.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="tnb">
+        <ul>
+            <li><a href="#">로그인</a></li>
+            <li><a href="#">회원가입</a></li>
+            <li><a href="#">예약·결제 확인</a></li>
+            <li><a href="#">고객센터</a></li>
+            <li><a href="#">회사소개</a></li>
+            <li><a href="#">회사소개브로슈어</a></li>
+        </ul>
+    </div>
+    <header>
+        <div class="wrap">
+            <div class="logo">
+                <a href="#"></a>
+                <a href="#"></a>
+            </div>
+            <nav class="gnb">
+                <ul class="menu">
+                    <li><a href="#">기차여행</a>
+                        <div class="submenu">
+                            <ul class="submenu1">
+                                <li><a href="#">일반열차</a>
+                                    <ul class="submenu2">
+                                        <li><a href="#">고속열차(KTX/SRT)</a></li>
+                                        <li><a href="#">무궁화/새마을호</a></li>
+                                        <li><a href="#">ITX-청춘</a></li>
+                                        <li><a href="#">관광열차</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">기타</a>
+                                    <ul class="submenu2">
+                                        <li><a href="#">기타교통/현지합류</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">단독여행문의</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">지역별여행</a>
+                        <div class="submenu">
+                            <ul class="submenu1">
+                                <li><a href="#">지역별여행</a>
+                                    <ul class="submenu2">
+                                        <li><a href="#">강원</a></li>
+                                        <li><a href="#">인천/경기</a></li>
+                                        <li><a href="#">충북</a></li>
+                                        <li><a href="#">대전/충남</a></li>
+                                        <li><a href="#">대구/경북</a></li>
+                                        <li><a href="#">부산/경남</a></li>
+                                        <li><a href="#">전북</a></li>
+                                        <li><a href="#">전남/광주</a></li>
+                                        <li><a href="#">섬</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">일정별여행</a>
+                        <div class="submenu">
+                            <ul class="submenu1">
+                                <li><a href="#">일정별여행</a></li>
+                                <li><a href="#">당일여행</a></li>
+                                <li><a href="#">무박2일/숙박</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">레일크루즈해랑</a></li>
+                    <li><a href="#">맞춤여행</a></li>
+                    <li><a href="#">전국통합 레일바이크</a></li>
+                </ul>
+            </nav>
+            <div class="iconBox">
+                <a href="#" class="dday"></a>
+                <a href="#" class="search"><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href="#" class="side"><i class="fa-solid fa-bars"></i></a>
+            </div>
+        </div>
+        <div id="search">
+            <div class="searchBox">
+                <div class="search__container">
+                    <div class="search__top">
+                        <button>닫기<i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                    <div class="search__area">
+                        <div class="search__area-top">
+                            <button class="close"><i class="fa-solid fa-arrow-left"></i></button>
+                            <input type="search" name="q" id="site-search" placeholder="검색어를 입력해주세요.">
+                            <label for="site-search"><i class="fa-solid fa-magnifying-glass"></i></label>
+                        </div>
+                        <div class="search__area-bottom">
+                            <p><i class="fa-regular fa-thumbs-up"></i>인기검색어</p>
+                            <div class="search__btns">
+                                <button>승차권예매</button>
+                                <button>승차권예매확인</button>
+                                <button>여행</button>
+                                <button>채용</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="side">
+            <div class="side__container">
+                <div class="side__top">
+                    <div class="select__container">
+                        <select name="quickMenu" id="quickMenu">
+                            <option value="">자주찾는 메뉴</option>
+                            <option value="">채용정보</option>
+                            <option value="">고객의 소리</option>
+                            <option value="">예약확인</option>
+                            <option value="">마이페이지</option>
+                            <option value="">맞춤여행</option>
+                        </select>
+                        <select name="language" id="language">
+                            <option value="Language">Language</option>
+                            <option value="English">English</option>
+                            <option value="日本語">日本語</option>
+                            <option value="中國語">中國語</option>
+                            <option value="한국어">한국어</option>
+                        </select>
+                    </div>
+                    <button><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="side__bottom">
+                    <ul class="side__menu">
+                        <li class="on"><a href="#" class="sideBtn">기차여행</a>
+                            <div class="sub__menu">
+                                <ul class="sub__menu1">
+                                    <li><a href="#" class="sideSubBtn">일반열차<i class="fa-solid fa-angle-right"></i></a>
+                                        <ul class="sub__menu2">
+                                            <li><a href="#">&#8226;고속열차(KTX/SRT)</a></li>
+                                            <li><a href="#">&#8226;무궁화/새마을호</a></li>
+                                            <li><a href="#">&#8226;ITX-청춘</a></li>
+                                            <li><a href="#">&#8226;관광열차</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#" class="sideSubBtn">기타<i class="fa-solid fa-angle-right"></i></a>
+                                        <ul class="sub__menu2">
+                                            <li><a href="#">&#8226;기타교통/현지합류</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#" class="sideSubBtn">단독여행문의</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="#" class="sideBtn">지역별여행</a>
+                            <div class="sub__menu">
+                                <ul class="sub__menu1">
+                                    <li><a href="#" class="sideSubBtn">지역별여행<i class="fa-solid fa-angle-right"></i></a>
+                                        <ul class="sub__menu2">
+                                            <li><a href="#">&#8226;강원</a></li>
+                                            <li><a href="#">&#8226;인천/경기</a></li>
+                                            <li><a href="#">&#8226;충북</a></li>
+                                            <li><a href="#">&#8226;대전/충남</a></li>
+                                            <li><a href="#">&#8226;대구/경북</a></li>
+                                            <li><a href="#">&#8226;부산/경남</a></li>
+                                            <li><a href="#">&#8226;전북</a></li>
+                                            <li><a href="#">&#8226;전남/광주</a></li>
+                                            <li><a href="#">&#8226;섬</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="#" class="sideBtn">일정별여행</a>
+                            <div class="sub__menu">
+                                <ul class="sub__menu1">
+                                    <li><a href="#" class="sideSubBtn">일정별여행</a></li>
+                                    <li><a href="#" class="sideSubBtn">당일여행</a></li>
+                                    <li><a href="#" class="sideSubBtn">무박2일/숙박</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li><a href="#" class="sideBtn">레일크루즈 해랑</a></li>
+                        <li><a href="#" class="sideBtn">맞춤여행</a></li>
+                        <li><a href="#" class="sideBtn">통합레일바이크</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="slide">
+        <div class="mainslide">
+            <div class="active" style="background-image: url(img_korail/main01.png);"></div>
+            <div style="background-image: url(img_korail/main02.png);"></div>
+            <div style="background-image: url(img_korail/main03.png);"></div>
+            <div style="background-image: url(img_korail/main04.png);"></div>
+            <div style="background-image: url(img_korail/main05.png);"></div>
+        </div>
+        <div class="btn">
+            <ul>
+                <li class="active"><a href="#">전라북도</a></li>
+                <li><a href="#">가정의 달</a></li>
+                <li><a href="#">요즘대세 친환경여행</a></li>
+                <li><a href="#">봄 이야기</a></li>
+                <li><a href="#">섬 여행</a></li>
+            </ul>
+        </div>
+        <div class="side-btns">
+            <div>
+                <span><i class="fas fa-angle-left"></i></span>
+            </div>
+            <div>
+                <span><i class="fas fa-angle-right"></i></span>
+            </div>
+        </div>
+    </div>
+    
+    <main>
+        <!-- 베스트여행 -->
+        <div class="best" style="background-image: url(img_korail/backgorundImg02.png);">
+            <h2>베스트 여행</h2>
+            <div class="bestBox__container">
+                <div class="bestBox">
+                    <div class="itemBox">
+                        <img src="img_korail/best01.jpg" alt="best01">
+                        <div class="itemUp">
+                            <p class="itemUp__title">충남</p>
+                            <p>세계 5대 튤립축제</p>
+                            <p>₩84,000원~</p>
+                            <button><i class="fa-solid fa-magnifying-glass-plus"></i>더보기</button>
+                        </div>
+                    </div>
+                    <div class="itemBox">
+                        <img src="img_korail/best02.jpg" alt="best02">
+                        <div class="itemUp">
+                            <p class="itemUp__title">부산</p>
+                            <p>태종대 · 흰여울문화마을 · 송도해수욕장 당일</p>
+                            <p>₩104,000원~</p>
+                            <button><i class="fa-solid fa-magnifying-glass-plus"></i>더보기</button>
+                        </div>
+                    </div>
+                    <div class="itemBox">
+                        <img src="img_korail/best03.jpg" alt="best03">
+                        <div class="itemUp">
+                            <p class="itemUp__title">전남</p>
+                            <p>천년의 신비를 간직한 홍도 · 흑산도 1박2일</p>
+                            <p>₩292,000원~</p>
+                            <button><i class="fa-solid fa-magnifying-glass-plus"></i>더보기</button>
+                        </div>
+                    </div>
+                    <div class="itemBox">
+                        <img src="img_korail/best04.jpg" alt="best04">
+                        <div class="itemUp">
+                            <p class="itemUp__title">강원</p>
+                            <p>호반도시 매력을 느낄 수 있는 춘천 여행 당일</p>
+                            <p>₩59,000원~</p>
+                            <button><i class="fa-solid fa-magnifying-glass-plus"></i>더보기</button>
+                        </div>
+                    </div>
+                    <div class="itemBox">
+                        <img src="img_korail/best05.jpg" alt="best05">
+                        <div class="itemUp">
+                            <p class="itemUp__title">충남</p>
+                            <p>옥화구곡 관광길 & 상당산성 & 신선주 만들기 체험</p>
+                            <p>₩79,000원~</p>
+                            <button><i class="fa-solid fa-magnifying-glass-plus"></i>더보기</button>
+                        </div>
+                    </div>
+                    <div class="itemBox">
+                        <img src="img_korail/best06.jpg" alt="best06">
+                        <div class="itemUp">
+                            <p class="itemUp__title">전남</p>
+                            <p>봄향기 가득한 남도 답사 1번지 1박2일</p>
+                            <p>₩233,000원~</p>
+                            <button><i class="fa-solid fa-magnifying-glass-plus"></i>더보기</button>
+                        </div>
+                    </div>
+                    <div class="itemBox">
+                        <img src="img_korail/best07.jpg" alt="best07">
+                        <div class="itemUp">
+                            <p class="itemUp__title">전남</p>
+                            <p>보라빛 향연 신안 퍼플섬  1박2일</p>
+                            <p>₩266,000원~</p>
+                            <button><i class="fa-solid fa-magnifying-glass-plus"></i>더보기</button>
+                        </div>
+                    </div>
+                    <div class="itemBox">
+                        <img src="img_korail/best08.jpg" alt="best08">
+                        <div class="itemUp">
+                            <p class="itemUp__title">경북</p>
+                            <p>아름다운 신비의 섬~ 울릉도 2박3일</p>
+                            <p>₩342,000원~</p>
+                            <button><i class="fa-solid fa-magnifying-glass-plus"></i>더보기</button>
+                        </div>
+                    </div>
+                    <div class="btns">
+                        <a class="prev" href="#"><i class="fa-solid fa-circle-chevron-left"></i></a>
+                        <a class="next" href="#"><i class="fa-solid fa-circle-chevron-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- 추천여행 -->
+        <div class="recommend" style="background-image: url(img_korail/backgorundImg03.png);">
+            <div class="recommend__wrap">
+                <h2>추천여행</h2>
+            <div class="recommend__btn">
+                <button href="#tab1" class="btn on">기차여행</button>
+                <button href="#tab2" class="btn">지역별 여행I</button>
+                <button href="#tab3" class="btn">지역별 여행II</button>
+                <button href="#tab4" class="btn">숙박여행</button>
+                <button href="#tab5" class="btn">기타지역여행</button>
+            </div>
+            <div class="recommend__items">
+                <!-- 기차여행 -->
+                <div class="recommend__item" id="tab1" style="display: flex;">
+                    <div class="itemBox">
+                        <img src="img_korail/recommend01.jpg" alt="recommend01">
+                        <div class="itemUp">
+                            <p class="itemUp__title">전남</p>
+                            <p>다도해해상국립공원 대표 섬여행 2박3일</p>
+                            <p>₩347,000원~</p>
+                            <button><i class="fa-solid fa-magnifying-glass-plus"></i>더보기</button>
+                        </div>
+                    </div>
+                    <div class="itemBox">
+                        <img src="img_korail/recommend02.jpg" alt="recommend02">
+                        <div class="itemUp">
+                            <p class="itemUp__title">강원</p>
+                            <p>짜릿한 원주 소금산 울렁다리 당일</p>
+                            <p>₩99,000원~</p>
+                            <button><i class="fa-solid fa-magnifying-glass-plus"></i>더보기</button>
+                        </div>
+                    </div>
+                    <div class="itemBox">
+                        <img src="img_korail/recommend03.jpg" alt="recommend03">
+                        <div class="itemUp">
+                            <p class="itemUp__title">부산</p>
+                            <p>해동용궁사·해운대 마린시티 당일</p>
+                            <p>₩94,000원~</p>
+                            <button><i class="fa-solid fa-magnifying-glass-plus"></i>더보기</button>
+                        </div>
+                    </div>
+                    <div class="itemBox">
+                        <img src="img_korail/recommend04.jpg" alt="recommend04">
+                        <div class="itemUp">
+                            <p class="itemUp__title">부산</p>
+                            <p>부산명소탐방 1박2일</p>
+                            <p>₩214,000원~</p>
+                            <button><i class="fa-solid fa-magnifying-glass-plus"></i>더보기</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 지역별 여행 1 -->
+                <div class="recommend__item" id="tab2">
+                    <div class="itemBox">
+                        <img src="img_korail/recommend05.jpg" alt="recommend05">
+                        <div class="itemUp">
+                            <p class="itemUp__title">충북</p>
+                            <p>청남대의 봄·청정 괴산 산막이 옛길 당일</p>
+                            <p>₩64,000원~</p>
+                            <button><i class="fa-solid fa-magnifying-glass-plus"></i>더보기</button>
+                        </div>
+                    </div>
+                    <div class="itemBox">
+                        <img src="img_korail/recommend06.jpg" alt="recommend06">
+                        <div class="itemUp">
+                            <p class="itemUp__title">강원</p>
+                            <p>바다열차 타고 떠나는 봄꽃 명소 당일</p>
+                            <p>₩129,000원~</p>
+                            <button><i class="fa-solid fa-magnifying-glass-plus"></i>더보기</button>
+                        </div>
+                    </div>
+                    <div class="itemBox">
+                        <img src="img_korail/recommend07.jpg" alt="nameIcon2">
+                        <div class="itemUp">
+                            <p class="itemUp__title">충북</p>
+                            <p>청주 옥화구곡 관광길 & 초정행궁 당일</p>
+                            <p>₩94,000원~</p>
+                            <button><i class="fa-solid fa-magnifying-glass-plus"></i>더보기</button>
+                        </div>
+                    </div>
+                    <div class="itemBox">
+                        <img src="img_korail/recommend08.jpg" alt="recommend08">
+                        <div class="itemUp">
+                            <p class="itemUp__title">충북</p>
+                            <p>옥천 향수호수길·수생식물원·옥천구읍투어 당일</p>
+                            <p>₩79,900원~</p>
+                            <button><i class="fa-solid fa-magnifying-glass-plus"></i>더보기</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 지역별 여행2 -->
+                <div class="recommend__item" id="tab3">
+                    <div class="itemBox">
+                        <img src="img_korail/recommend09.jpg" alt="recommend09">
+                        <div class="itemUp">
+                            <p class="itemUp__title">경북</p>
+                            <p>안동 문화유산 봉정사·낙강물길공원 당일</p>
+                            <p>₩64,000원~</p>
+                            <button><i class="fa-solid fa-magnifying-glass-plus"></i>더보기</button>
+                        </div>
+                    </div>
+                    <div class="itemBox">
+                            <img src="img_korail/recommend10.jpg" alt="recommend10">
+                        <div class="itemUp">
+                            <p class="itemUp__title">전북</p>
+                            <p>봄향기 마이산 & 전주 한옥마을 당일</p>
+                            <p>₩65,000원~</p>
+                            <button><i class="fa-solid fa-magnifying-glass-plus"></i>더보기</button>
+                        </div>
+                    </div>
+                    <div class="itemBox">
+                        <img src="img_korail/recommend11.jpg" alt="recommend11">
+                        <div class="itemUp">
+                            <p class="itemUp__title">전북</p>
+                            <p>호남의 강천산 & 체계산 출렁다리 당일</p>
+                            <p>₩55,000원~</p>
+                            <button><i class="fa-solid fa-magnifying-glass-plus"></i>더보기</button>
+                        </div>
+                    </div>
+                    <div class="itemBox">
+                        <img src="img_korail/recommend12.jpg" alt="recommend12">
+                        <div class="itemUp">
+                            <p class="itemUp__title">경북</p>
+                            <p>영주의 세계문화유산 & 풍류기행 당일</p>
+                            <p>₩86,000원~</p>
+                            <button><i class="fa-solid fa-magnifying-glass-plus"></i>더보기</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 숙박여행 -->
+                <div class="recommend__item" id="tab4">
+                    <div class="itemBox">
+                        <img src="img_korail/recommend13.jpg" alt="recommend13">
+                        <div class="itemUp">
+                            <p class="itemUp__title">전남</p>
+                            <p>삶의 쉼표가 되는 청산도·보길도 1박2일</p>
+                            <p>₩300,000원~</p>
+                            <button><i class="fa-solid fa-magnifying-glass-plus"></i>더보기</button>
+                        </div>
+                    </div>
+                    <div class="itemBox"">
+                        <img src="img_korail/recommend14.jpg" alt="recommend14">
+                        <div class="itemUp">
+                            <p class="itemUp__title">전남</p>
+                            <p>서해 대표 홍도·흑산도·목포 2박3일</p>
+                            <p>₩65,000원~</p>
+                            <button><i class="fa-solid fa-magnifying-glass-plus"></i>더보기</button>
+                        </div>
+                    </div>
+                    <div class="itemBox">
+                        <img src="img_korail/recommend15.jpg" alt="recommend15">
+                        <div class="itemUp">
+                            <p class="itemUp__title">경남</p>
+                            <p>남해안 별미 기차여행 2박3일</p>
+                            <p>₩413,000원~</p>
+                            <button><i class="fa-solid fa-magnifying-glass-plus"></i>더보기</button>
+                        </div>
+                    </div>
+                    <div class="itemBox">
+                        <img src="img_korail/recommend16.jpg" alt="recommend16">
+                        <div class="itemUp">
+                            <p class="itemUp__title">전남</p>
+                            <p>남도 맛따라 기차여행 1박 2일</p>
+                            <p>₩288,000원~</p>
+                            <button><i class="fa-solid fa-magnifying-glass-plus"></i>더보기</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 기타교통/현지합류 -->
+                <div class="recommend__item" id="tab5">
+                    <div class="itemBox">
+                        <img src="img_korail/recommend17.jpg" alt="recommend17">
+                        <div class="itemUp">
+                            <p class="itemUp__title">제주</p>
+                            <p> 봄 풍경이 있는 제주 2박 3일</p>
+                            <p>₩319,000원~</p>
+                            <button><i class="fa-solid fa-magnifying-glass-plus"></i>더보기</button>
+                        </div>
+                    </div>
+                    <div class="itemBox">
+                        <img src="img_korail/recommend18.jpg" alt="recommend18">
+                        <div class="itemUp">
+                            <p class="itemUp__title">인천</p>
+                            <p>서해 천혜의 자연을 품은 백령도 1박2일</p>
+                            <p>₩149,000원~</p>
+                            <button><i class="fa-solid fa-magnifying-glass-plus"></i>더보기</button>
+                        </div>
+                    </div>
+                    <div class="itemBox">
+                        <img src="img_korail/recommend19.jpg" alt="recommend19">
+                        <div class="itemUp">
+                            <p class="itemUp__title">인천</p>
+                            <p>보물섬 백령도, 대청도 명품로드 2박3일</p>
+                            <p>₩235,000원~</p>
+                            <button><i class="fa-solid fa-magnifying-glass-plus"></i>더보기</button>
+                        </div>
+                    </div>
+                    <div class="itemBox">
+                        <img src="img_korail/recommend20.jpg" alt="recommend20">
+                        <div class="itemUp">
+                            <p class="itemUp__title">제주</p>
+                            <p>실속요트여행 제주 2박3일</p>
+                            <p>₩339,000원~</p>
+                            <button><i class="fa-solid fa-magnifying-glass-plus"></i>더보기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- 테마파크 -->
+        <div class="theme" style="background-image: url(img_korail/backgorundImg.jpg);">
+            <h2>테마파크 여행</h2>
+            <div class="theme_items">
+                <div class="theme_item">
+                    <img src="img_korail/ThemePark_01.jpg" alt="ThemePark_01">
+                    <div class="theme_text">
+                        <small>레일바이크의 원조</small>
+                        <p>정선 레일바이크</p>
+                        <button>자세히보기+</button>
+                    </div>
+                </div>
+                <div class="theme_item">
+                    <img src="img_korail/ThemePark_02.jpg" alt="ThemePark_02">
+                    <div class="theme_text">
+                        <small>사계절 동해바다가 내 품안에</small>
+                        <p>삼척 바다열차</p>
+                        <button>자세히보기+</button>
+                    </div>
+                </div>
+                <div class="theme_item">
+                    <img src="img_korail/ThemePark_03.jpg" alt="ThemePark_03">
+                    <div class="theme_text">
+                        <small>동해바다와 일출을 품은</small>
+                        <p>정동진 레일바이크</p>
+                        <button>자세히보기+</button>
+                    </div>
+                </div>
+                <div class="theme_item">
+                    <img src="img_korail/ThemePark_04.jpg" alt="ThemePark_04">
+                    <div class="theme_text">
+                        <small>한국에서 가봐야 할 곳 50선</small>
+                        <p>곡성 섬진강기차마을</p>
+                        <button>자세히보기+</button>
+                    </div>
+                </div>
+                <div class="theme_item">
+                    <img src="img_korail/ThemePark_05.jpg" alt="ThemePark_05">
+                    <div class="theme_text">
+                        <small>아름다운 생명고을</small>
+                        <p>청도 레일바이크</p>
+                        <button>자세히보기+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <section class="footer__top">
+            <div class="footer__wrap">
+                <div class="menuTab">
+                    <ul>
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">고객서비스현장</a></li>
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">정보공개</a></li>
+                    </ul>
+                </div>
+                <div class="snsSet">
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram-square"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-square"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter-square"></i></a>
+                    <a href="#"><i class="fa-brands fa-blogger"></i></a>
+                </div>
+            </div>
+        </section>
+        <section class="footer__itemUp">
+            <div class="footer__wrap">
+                <div class="section__left">
+                    <div class="logoTab">
+                        <a href="#"><img src="img_korail/logo03.png" alt="logo03"></a>
+                        <a href="#"><img src="img_korail/logo04.png" alt="logo04"></a>
+                    </div>
+                    <div class="infoTab">
+                        <div class="faq">
+                            <h3>FAQ자주묻는질문</h3>
+                            <button>국내여행</button>
+                            <button>관광열차</button>
+                            <button>테마파크</button>
+                            <button>이용안내</button>
+                        </div>
+                        <div class="right">
+                            <small>서울특별시 용산구 청파로 378 (동자동 43-229) KORAIL KTX B/D 1층</small>
+                            <small>사업자등록번호 : 106-85-25043 (104-81-89311)</small>
+                            <small>통신판매업신고 제 2009-서울용산-00304호 (통신판매업신고 제2019-서울용산-0866호)</small>
+                            <small>대표번호 : 1544-7755 | 대표이사 : 정현우 | 개인정보관리담당관 : 김민철</small>
+                            <small>Copyright © 2004 KORAIL TOURISM DEVELOPMENT All Rights Reserved</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="section__right">
+                    <div class="voc">
+                        <h3>VOC 고객의 소리</h3>
+                        <i class="fa-solid fa-comments"></i>
+                        <button>글쓰기></button>
+                    </div>
+                    <div class="cs">
+                        <h3>CScenter</h3>
+                        <strong>1544-7755</strong>
+                        <p>운영시간: 09:00~18:00 <br> 공휴일/주말 휴무</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </footer>
+    <script src="js/main_korail.js"></script>
+</body>
+</html>
