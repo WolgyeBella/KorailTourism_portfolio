@@ -55,13 +55,12 @@ $(document).ready(function(){
             }
         };
     
-    $post.click();
-});
+        $post.click();
+    });
 
     setInterval(function(){
         $('.slide > .side-btns > div').eq(1).click();
     }, 3000);
-
 });
 
 // 사이드 탭 메뉴 클릭 이벤트
@@ -99,3 +98,85 @@ const sideOpenButton = document.querySelector('.iconBox > .side');
 sideOpenButton.addEventListener('click', () => {
     side.classList.add('on');
 });
+
+// 검색 창 닫기 버튼 클릭 이벤트
+const searchCloseButton = document.querySelector('.search__top > button');
+const searchCloseBtn = document.querySelector('.search__area-top > .close');
+const search = document.querySelector('#search');
+searchCloseButton.addEventListener('click', () => {
+    search.classList.remove('on');
+});
+searchCloseBtn.addEventListener('click', () => {
+    search.classList.remove('on');
+});
+
+
+
+// 검색 창 열기 버튼 클릭 이벤트
+const searchOpenButton = document.querySelector('.iconBox > .search');
+searchOpenButton.addEventListener('click', () => {
+    search.classList.add('on');
+});
+
+//슬라이드 배경화면 스크롤에 따라 투명하게 이벤트
+const slide = document.querySelector('.mainslide');
+const slideHeight = slide.getBoundingClientRect().height;
+document.addEventListener('scroll', () => {
+    slide.style.opacity = 1 - window.scrollY / slideHeight;
+});
+
+// 베스트 여행 배경화면 스크롤에 따라 transform 이벤트
+const best = document.querySelector('.best');
+const bestHeight = best.getBoundingClientRect().height;
+document.addEventListener('scroll',() => {
+    
+});
+
+// 추천여행 탭 클릭 이벤트
+const tabList = document.querySelectorAll('.recommend__btn a');
+const contents = document.querySelectorAll('.recommend__items .recommend__item');
+let activeCont = ''; // 현재 활성화 된 컨텐츠 (기본:#tab1 활성화)
+
+for(var i = 0; i < tabList.length; i++){
+    tabList[i].addEventListener('click', function(e){
+    e.preventDefault();
+    for(var j = 0; j < tabList.length; j++){
+      // 나머지 버튼 클래스 제거
+    tabList[j].classList.remove('on');
+
+      // 나머지 컨텐츠 display:none 처리
+    contents[j].style.display = 'none';
+    }
+
+    // 버튼 관련 이벤트
+    this.classList.add('on');
+
+    // 버튼 클릭시 컨텐츠 전환
+    activeCont = this.getAttribute('href');
+    document.querySelector(activeCont).style.display = 'flex';
+});
+}
+
+// 메인슬라이드 클릭 버튼 이벤트
+$(function(){
+    $('.bestBox .itemBox:last').prependTo('.bestBox');
+    $('.bestBox').css('margin-left','-290px');
+    btn();
+});
+
+function btn(){
+    $('.btns .next').on('click',function(e){
+        $('.bestBox').animate({marginLeft:'-=290px'},300,'swing',function(){
+            $('.bestBox .itemBox:first').appendTo('.bestBox');
+            $('.bestBox').css('margin-left','-290px');
+        });
+        return false;
+    });
+    $('.btns .prev').on('click',function(e){
+        $('.bestBox').animate({marginLeft:'+=290px'},300,'swing',function(){
+            $('.bestBox .itemBox:last').prependTo('.bestBox');
+            $('.bestBox').css('margin-left','-290px');
+        });
+        return false;
+    });
+}

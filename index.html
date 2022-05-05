@@ -88,30 +88,29 @@
                 <a href="#" class="side"><i class="fa-solid fa-bars"></i></a>
             </div>
         </div>
-    </header>
-    <div class="slide">
-        <div class="mainslide">
-            <div class="active" style="background-image: url(img/main01.png);"></div>
-            <div style="background-image: url(img/main02.png);"></div>
-            <div style="background-image: url(img/main03.png);"></div>
-            <div style="background-image: url(img/main04.png);"></div>
-            <div style="background-image: url(img/main05.png);"></div>
-        </div>
-        <div class="btn">
-            <ul>
-                <li class="active"><a href="#">전라북도</a></li>
-                <li><a href="#">가정의 달</a></li>
-                <li><a href="#">요즘대세 친환경여행</a></li>
-                <li><a href="#">봄 이야기</a></li>
-                <li><a href="#">섬 여행</a></li>
-            </ul>
-        </div>
-        <div class="side-btns">
-            <div>
-                <span><i class="fas fa-angle-left"></i></span>
-            </div>
-            <div>
-                <span><i class="fas fa-angle-right"></i></span>
+        <div id="search">
+            <div class="searchBox">
+                <div class="search__container">
+                    <div class="search__top">
+                        <button>닫기<i class="fa-solid fa-xmark"></i></button>
+                    </div>
+                    <div class="search__area">
+                        <div class="search__area-top">
+                            <button class="close"><i class="fa-solid fa-arrow-left"></i></button>
+                            <input type="search" name="q" id="site-search" placeholder="검색어를 입력해주세요.">
+                            <label for="site-search"><i class="fa-solid fa-magnifying-glass"></i></label>
+                        </div>
+                        <div class="search__area-bottom">
+                            <p><i class="fa-regular fa-thumbs-up"></i>인기검색어</p>
+                            <div class="search__btns">
+                                <button>승차권예매</button>
+                                <button>승차권예매확인</button>
+                                <button>여행</button>
+                                <button>채용</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="side">
@@ -191,6 +190,32 @@
                         <li><a href="#" class="sideBtn">통합레일바이크</a></li>
                     </ul>
                 </div>
+            </div>
+        </div>
+    </header>
+    <div class="slide">
+        <div class="mainslide">
+            <div class="active" style="background-image: url(img/main01.png);"></div>
+            <div style="background-image: url(img/main02.png);"></div>
+            <div style="background-image: url(img/main03.png);"></div>
+            <div style="background-image: url(img/main04.png);"></div>
+            <div style="background-image: url(img/main05.png);"></div>
+        </div>
+        <div class="btn">
+            <ul>
+                <li class="active"><a href="#">전라북도</a></li>
+                <li><a href="#">가정의 달</a></li>
+                <li><a href="#">요즘대세 친환경여행</a></li>
+                <li><a href="#">봄 이야기</a></li>
+                <li><a href="#">섬 여행</a></li>
+            </ul>
+        </div>
+        <div class="side-btns">
+            <div>
+                <span><i class="fas fa-angle-left"></i></span>
+            </div>
+            <div>
+                <span><i class="fas fa-angle-right"></i></span>
             </div>
         </div>
     </div>
@@ -286,15 +311,15 @@
             <div class="recommend__wrap">
                 <h2>추천여행</h2>
             <div class="recommend__btn">
-                <button>기차여행</button>
-                <button>지역별 여행I</button>
-                <button>지역별 여행II</button>
-                <button>숙박여행</button>
-                <button>기타교통/현지합류</button>
+                <a href="#tab1" class="btn on">기차여행</a>
+                <a href="#tab2" class="btn">지역별 여행I</a>
+                <a href="#tab3" class="btn">지역별 여행II</a>
+                <a href="#tab4" class="btn">숙박여행</a>
+                <a href="#tab5" class="btn">기타교통/현지합류</a>
             </div>
             <div class="recommend__items">
                 <!-- 기차여행 -->
-                <div class="recommend__item on">
+                <div class="recommend__item" id="tab1" style="display: flex;">
                     <div class="itemBox">
                         <img src="img/recommend01.jpg" alt="recommend01">
                         <div class="itemUp">
@@ -333,7 +358,7 @@
                     </div>
                 </div>
                 <!-- 지역별 여행 1 -->
-                <div class="recommend__item">
+                <div class="recommend__item" id="tab2">
                     <div class="itemBox">
                         <img src="img/recommend05.jpg" alt="recommend05">
                         <div class="itemUp">
@@ -372,7 +397,7 @@
                     </div>
                 </div>
                 <!-- 지역별 여행2 -->
-                <div class="recommend__item">
+                <div class="recommend__item" id="tab3">
                     <div class="itemBox">
                         <img src="img/recommend09.jpg" alt="recommend09">
                         <div class="itemUp">
@@ -411,7 +436,7 @@
                     </div>
                 </div>
                 <!-- 숙박여행 -->
-                <div class="recommend__item">
+                <div class="recommend__item" id="tab4">
                     <div class="itemBox">
                         <img src="img/recommend13.jpg" alt="recommend13">
                         <div class="itemUp">
@@ -450,7 +475,7 @@
                     </div>
                 </div>
                 <!-- 기타교통/현지합류 -->
-                <div class="recommend__item">
+                <div class="recommend__item" id="tab5">
                     <div class="itemBox">
                         <img src="img/recommend17.jpg" alt="recommend17">
                         <div class="itemUp">
@@ -535,10 +560,6 @@
                         <button>자세히보기+</button>
                     </div>
                 </div>
-                <!-- <div class="btns">
-                    <a class="prev" href="#"><i class="fa-solid fa-circle-chevron-left"></i></a>
-                    <a class="next" href="#"><i class="fa-solid fa-circle-chevron-right"></i></a>
-                </div> -->
             </div>
         </div>
     </main>

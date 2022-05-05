@@ -384,6 +384,119 @@ button i{
     font-size: var(--font-sm);
 }
 
+/* search page */
+#search{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+}
+
+#search.on{
+    display: block;
+}
+
+#search .searchBox{
+    width: 100%;
+    height: 350px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-image: url(img/search_bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#search .search__container{
+    max-width: 1200px;
+    height: 100%;
+    margin: auto;
+}
+
+.search__top{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.search__top button{
+    font-size: var(--font-lg);
+    color: var(--font-sub);
+}
+
+.search__top button i{
+    margin-left: 5px;
+}
+
+.search__area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.search__area-top{
+    width: 500px;
+    border: 3px solid var(--font-sub);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.search__area-top .close{
+    display: none;
+}
+
+.search__area-top input{
+    background: none;
+    border: none;
+    width: 100%;
+    padding: 20px 10px;
+    outline: none;
+}
+
+.search__area-top input::placeholder{
+    color: var(--font-sub);
+    font-size: var(--font-base);
+}
+
+.search__area-top label i{
+    color: var(--font-sub);
+    padding: 0 5px;
+    font-size: var(--font-lg);
+}
+
+.search__area-bottom{
+    width: 500px;
+    padding: 20px 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.search__area-bottom p{
+    color: var(--font-sub);
+    margin-right: 20px;
+}
+
+.search__area-bottom p i{
+    margin-right: 5px;
+}
+
+.search__area-bottom button{
+    background-color: var(--main-light);
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: var(--font-sub);
+    margin-right: 5px;
+}
+
 /* 메인슬라이드 */
 
 .slide {
@@ -497,7 +610,8 @@ main .best{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 70px 0;
+    padding-top: 70px;
+    margin-bottom: 50px;
     background-repeat: no-repeat;
 }
 
@@ -515,7 +629,7 @@ main .best .bestBox__container{
 
 main .best .bestBox{
     width: 4000px;
-    margin: auto;
+    margin: 0 auto;
     display: flex;
     margin: var(--padding-lg) 0;
 }
@@ -535,12 +649,17 @@ main .best .btns a:hover{
     opacity: 1;
 }
 
+main .best .btns a:disabled{
+    cursor: default;
+}
+
 main .best .btns .prev{
     display: block;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     left: 15px;
+    z-index: 1;
 }
 
 main .best .btns .next{
@@ -548,13 +667,13 @@ main .best .btns .next{
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    right: 35px;
+    right: 15px;
+    z-index: 1;
 }
 
 .itemBox{
     width: 280px;
     height: 280px;
-    /* margin-right: 20px; */
     margin: 0 20px 20px 0;
     position: relative;
     transition: all 300ms;
@@ -632,8 +751,7 @@ main .recommend{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
-    /* padding: 50px 0; */
-    padding-bottom: 100px;
+    padding-bottom: 130px;
 }
 
 main .recommend__wrap{
@@ -658,9 +776,12 @@ main .recommend__btn{
     flex-wrap: wrap;
 }
 
-main .recommend__btn button{
+main .recommend__btn a{
+    display: block;
     width: 150px;
     height: 50px;
+    line-height: 50px;
+    text-align: center;
     border: 3px solid var(--main-color);
     background: none;
     font-size: var(--font-lg);
@@ -670,7 +791,12 @@ main .recommend__btn button{
     transition: all 0.4s;
 }
 
-main .recommend__btn button:hover{
+main .recommend__btn a:hover{
+    background: var(--main-color);
+    color: var(--font-sub);
+}
+
+main .recommend__btn a.on{
     background: var(--main-color);
     color: var(--font-sub);
 }
@@ -679,14 +805,11 @@ main .recommend__items{
     margin: var(--padding-lg) 0;
 }
 
-main .recommend__items .recommend__item.on{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
 main .recommend__items .recommend__item{
     display: none;
+    /* display: flex; */
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 /* 테마여행 */
@@ -998,6 +1121,55 @@ footer .section__right .cs p{
     header .iconBox a.side{
         display: block;
     }
+
+    footer .section__right .voc{
+        justify-content: space-between;
+    }
+
+    #search{
+        background-color: rgba(17, 68, 144, 0.9);
+    }
+
+    .searchBox{
+        background-image: none !important;
+    }
+
+    .search__container{
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .search__area{
+        margin: 0;
+        align-items: flex-start;
+    }
+
+    .search__top{
+        display: none;
+    }
+
+    .search__area-top{
+        width: 100%;
+        border: none;
+        background-color: var(--font-sub);
+    }
+
+    .search__area-top .close{
+        display: block;
+        padding: 0 10px;
+    }
+
+    .search__area-top .close i{
+        color: var(--sub-light);
+    }
+
+    .search__area-top input::placeholder{
+        color: var(--sub-light);
+    }
+
+    .search__area-top label i{
+        color: var(--sub-light);
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -1027,6 +1199,10 @@ footer .section__right .cs p{
 
     .section__left{
         flex-direction: column;
+    }
+
+    footer .section__left .logoTab{
+        flex-direction: row;
     }
 
 }
