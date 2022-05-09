@@ -613,6 +613,14 @@ main .best{
     padding-top: 70px;
     margin-bottom: 50px;
     background-repeat: no-repeat;
+    opacity: 0;
+    transform: translate(0, -100px);
+    transition: all 500ms ease-in;
+}
+
+main .best.show{
+    opacity: 1;
+    transform: none;
 }
 
 main .best h2{
