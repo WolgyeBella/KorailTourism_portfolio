@@ -1,8 +1,10 @@
 $(document).ready(function(){
     $('.menu > li').mouseenter(function(){
-        $(this).find('.submenu').stop().slideDown('fast');
-        $('header').addClass('active');
-        $(this).css('border-color','var(--main-color)');
+        if($(window).width() > 479){
+            $(this).find('.submenu').stop().slideDown('fast');
+            $('header').addClass('active');
+            $(this).css('border-color','var(--main-color)');
+        }
     });
     $('.menu > li').mouseleave(function(){
         $(this).find('.submenu').stop().slideUp('fast');

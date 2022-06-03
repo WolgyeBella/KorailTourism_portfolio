@@ -1209,3 +1209,87 @@ footer .section__right .cs p{
     }
 
 }
+@media screen and (max-width: 479px){
+    *{
+        box-sizing: border-box;
+    }
+    .tnb{
+        display: none;
+    }
+    header{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        background: white;
+    }
+    .wrap{
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        justify-content:center;
+    }
+
+    header .logo{
+        flex-direction: column;
+    }
+
+    header .logo a{
+        background: url(img_korail/logo5.png) no-repeat;
+        background-size: contain;
+        width: 150px;
+        height: 90px;
+    }
+
+    header .logo a:last-child{
+        background: url(img_korail/logo6.png) no-repeat;
+        background-size: contain;
+        background-position: center;
+    }
+
+    header .gnb .menu{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    header .gnb{
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    header .gnb .menu li{
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    header .gnb .menu li:last-child{
+        margin-bottom: 0;
+    }
+
+    header .gnb .menu li a{
+        padding: 10px 0;
+        width: 50%;
+        text-align: center;
+        margin-left: 25%;
+        line-height: 1.8;
+        background: var(--main-color);
+        border-radius: 10px;
+        color: var(--font-sub);
+    }
+
+    header .iconBox{
+        display: none;
+    }
+    .slide{
+        display: none;
+    }
+    main{
+        display: none;
+    }
+    footer{
+        display: none;
+    }
+}
