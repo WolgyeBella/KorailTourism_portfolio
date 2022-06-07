@@ -616,6 +616,8 @@ main .best{
     padding-top: 70px;
     margin-bottom: 50px;
     background-repeat: no-repeat;
+    opacity: 0;
+    margin-top: -50px;
 }
 
 main .best h2{
@@ -755,6 +757,8 @@ main .recommend{
     background-repeat: no-repeat;
     background-position: bottom;
     padding-bottom: 130px;
+    opacity: 0;
+    margin-top: -50px;
 }
 
 main .recommend__wrap{

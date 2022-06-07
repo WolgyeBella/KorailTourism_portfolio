@@ -192,7 +192,7 @@ $(document).ready(function(){
             let bottom_of_window = $(window).scrollTop() + $(window).height();
             
             if(bottom_of_window >= bottom_of_element){
-                $(this).animate({'opacity':'1','marginBottom':'0px'},500);
+                $(this).animate({'opacity':'1','marginTop':'0px'},500);
             }
         });
     });
