@@ -126,13 +126,6 @@ document.addEventListener('scroll', () => {
     slide.style.opacity = 1 - window.scrollY / slideHeight;
 });
 
-// 베스트 여행 배경화면 스크롤에 따라 transform 이벤트
-const best = document.querySelector('.best');
-const bestHeight = best.getBoundingClientRect().height;
-document.addEventListener('scroll',() => {
-    
-});
-
 // 추천여행 탭 클릭 이벤트
 const tabList = document.querySelectorAll('.recommend__btn a');
 const contents = document.querySelectorAll('.recommend__items .recommend__item');
@@ -183,3 +176,24 @@ function btn(){
 }
 
 // best 여행 scroll animation
+$(document).ready(function(){
+    $(window).scroll(function(){
+        $('.best').each(function(){
+            let bottom_of_element = $(this).offset().top + $(this).innerHeight();
+            let bottom_of_window = $(window).scrollTop() + $(window).height();
+            
+            if(bottom_of_window >= bottom_of_element){
+                $(this).animate({'opacity':'1','marginTop':'0px'},500);
+            }
+        });
+
+        $('.recommend').each(function(){
+            let bottom_of_element = $(this).offset().top + $(this).innerHeight();
+            let bottom_of_window = $(window).scrollTop() + $(window).height();
+            
+            if(bottom_of_window >= bottom_of_element){
+                $(this).animate({'opacity':'1','marginBottom':'0px'},500);
+            }
+        });
+    });
+});

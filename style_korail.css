@@ -779,7 +779,7 @@ main .recommend__btn{
     flex-wrap: wrap;
 }
 
-main .recommend__btn button{
+main .recommend__btn a{
     width: 150px;
     height: 50px;
     line-height: 50px;
@@ -794,7 +794,7 @@ main .recommend__btn button{
     box-sizing: border-box;
 }
 
-main .recommend__btn button:hover{
+main .recommend__btn a:hover{
     background: var(--main-color);
     color: var(--font-sub);
 }
