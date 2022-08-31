@@ -180,3 +180,26 @@ function btn(){
         return false;
     });
 }
+
+// best 여행 scroll animation
+$(document).ready(function(){
+    $(window).scroll(function(){
+        $('.best').each(function(){
+            let bottom_of_element = $(this).offset().top + $(this).innerHeight();
+            let bottom_of_window = $(window).scrollTop() + $(window).height();
+            
+            if(bottom_of_window >= bottom_of_element){
+                $(this).animate({'opacity':'1','marginTop':'0px'},500);
+            }
+        });
+
+        $('.recommend').each(function(){
+            let bottom_of_element = $(this).offset().top + $(this).innerHeight();
+            let bottom_of_window = $(window).scrollTop() + $(window).height();
+            
+            if(bottom_of_window >= bottom_of_element){
+                $(this).animate({'opacity':'1','marginTop':'0px'},500);
+            }
+        });
+    });
+});
