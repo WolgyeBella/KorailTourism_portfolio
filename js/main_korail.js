@@ -126,7 +126,7 @@ document.addEventListener('scroll', () => {
     slide.style.opacity = 1 - window.scrollY / slideHeight;
 });
 
-// 추천여행 탭 클릭 이벤트
+// 추천여행 탭 클릭 이벤트 스크립트
 const tabList = document.querySelectorAll('.recommend__btn a');
 const contents = document.querySelectorAll('.recommend__items .recommend__item');
 let activeCont = ''; // 현재 활성화 된 컨텐츠 (기본:#tab1 활성화)
